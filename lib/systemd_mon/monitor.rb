@@ -7,8 +7,8 @@ require 'systemd_mon/error'
 
 module SystemdMon
   class Monitor
-    def initialize(dbus_manager)
-      self.hostname     = `hostname`.strip
+    def initialize(hostname, dbus_manager)
+      self.hostname     = hostname
       self.dbus_manager = dbus_manager
       self.units        = []
       self.change_callback     = lambda(&method(:unit_change_callback))
