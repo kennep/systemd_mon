@@ -10,4 +10,4 @@ COPY . /usr/src/app
 RUN bundle install
 
 ENV RUBYLIB=/usr/src/app/lib
-CMD ["./bin/systemd_mon"]
+CMD ["./bin/systemd_mon", "/systemd_mon/systemd_mon.yml"]
